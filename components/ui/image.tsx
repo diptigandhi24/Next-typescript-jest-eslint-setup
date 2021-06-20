@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image'
 
 interface ImageProps {
   url: string;
@@ -6,8 +7,8 @@ interface ImageProps {
 }
 const SplashImage = ({ url, onClick }: ImageProps) => {
   return (
-    <div onClick={onClick}>
-      <img src={url} alt="randomImage" className="img-Wrapper" />
+    <div onClick={onClick} style={{ position: "inherit" }}>
+      <Image src={url} alt="randomImage" width={"300px"} height={"300px"} objectFit='cover' />
     </div>
   );
 };

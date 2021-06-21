@@ -5,7 +5,9 @@ export type Photo = {
   urls: { full: string; regular: string; raw: string; small: string; thumb: string };
   color: string | null;
   user: {
-    username: string;
-    name: string;
+    first_name: string;
+    last_name: string;
   };
+  alt_description: string;
+  author: string
 };

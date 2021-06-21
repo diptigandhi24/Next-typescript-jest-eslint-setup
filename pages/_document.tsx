@@ -16,7 +16,6 @@ class MainDocument extends Document {
           <NextScript />
           {/*Below we add the modal wrapper*/}
           <div id="modal-root"></div>
-          <div id="loadMore" style={{ border: "1px solid red" }}></div>
         </body>
       </Html>
     );

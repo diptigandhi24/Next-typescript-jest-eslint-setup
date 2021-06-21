@@ -2,11 +2,12 @@ import Image from 'next/image'
 
 interface ModalContentProps {
     url: string
-    imagename?: string,
+    imagename: string,
+    authorName: string,
     showContent: boolean,
     closeModal: () => void
 }
-export default function ModalContent({ url, imagename, showContent, closeModal }: ModalContentProps) {
+export default function ModalContent({ url, imagename, showContent, closeModal, authorName }: ModalContentProps) {
 
     return showContent ? <div className="modalWrapper">
         <div className="modalcontent">
@@ -21,8 +22,9 @@ export default function ModalContent({ url, imagename, showContent, closeModal }
 
                 />
             </div>
-            <div>
-                <p>imageDescription : {url} </p>
+            <div style={{ textAlign: "center" }}>
+                <p>imageDescription : {imagename} </p>
+                <p>Picture Credits : {authorName} </p>
             </div>
             <button className="closeModal" onClick={closeModal}>X</button>
 

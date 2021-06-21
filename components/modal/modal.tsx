@@ -12,7 +12,7 @@ interface ModalDisplayConditions {
 
 function Modal({ showContent, closeModal, photoInfo }: ModalDisplayConditions): React.ReactElement | null {
     const [isBrowser, setIsBrowser] = useState(false);
-
+    console.log("Information about the photo", photoInfo)
     useEffect(() => {
         setIsBrowser(true);
     }, []);
@@ -23,7 +23,7 @@ function Modal({ showContent, closeModal, photoInfo }: ModalDisplayConditions): 
         if (element !== null && photoInfo !== undefined) {
 
             return ReactDOM.createPortal(
-                <ModalContent showContent={showContent} url={photoInfo.urls.regular} closeModal={closeModal} />,
+                <ModalContent showContent={showContent} url={photoInfo.urls.regular} closeModal={closeModal} imagename={photoInfo.alt_description} authorName={`${photoInfo.user.first_name} ${photoInfo.user.last_name}`} />,
                 element
             )
 
